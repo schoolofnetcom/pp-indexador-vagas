@@ -1,0 +1,95 @@
+$bg-primary-default: #5d67ed;
+$bg-primary-secondary: #46d7ea;
+$color-default: white;
+$red-default: #f45562;
+
+html, body, h1, h2, h3, h4, h5, h6 { font-family: 'Source Sans Pro', sans-serif; }
+
+#header {
+	.navbar {
+		background: $bg-primary-default;
+		.navbar-brand {
+			color: $color-default;
+		}
+		.navbar-toggler {
+			span { color: $color-default }
+		}
+	}	
+
+	#navbar {
+		.nav-item {
+			.nav-link {
+				color: $color-default;				
+			}
+		}
+	}
+}
+
+#subheader {
+	background: linear-gradient(to bottom right, $bg-primary-default, $bg-primary-secondary);
+	color: $color-default;
+	text-align: center;
+	padding: 12em 0;
+	h1 {
+		font-size: 4em;
+		opacity: 0.7;
+	}
+	p {
+		opacity: 0.7;
+	}
+}
+
+#content {
+	margin: 6em 0;
+
+	.features-box {
+		text-align: center;
+		margin-top: 2em;
+		i {
+			display: inline-block;
+			width: 3em;
+			height: 3em;
+			border-radius: 50%;
+			color: $color-default;
+			line-height: 3em;
+			text-align: center;
+			font-size: 1.8em;
+		}
+		h3 {
+			font-weight: 600;
+			font-size: 1.5em;
+			color: #9a9a9a;
+			margin-top: 1em;
+		}
+		hr {
+			width: 3em;
+		}
+		p {
+			color: #9a9a9a;			
+		}
+	}
+}
+
+.c-white { color: $color-default }
+.title {
+	text-align: center;
+	margin: 0 auto;
+	max-width: 740px;
+	h2 {
+		position: relative;
+		text-transform: uppercase;
+		text-align: center;
+		font-weight: 300;
+		margin-bottom: 1em;
+		&:before {
+			content: "";
+			position: absolute;
+			background: $red-default; 
+			width: 3em;
+			height: 0.09em;
+			bottom: -0.8em;
+			left: 50%;
+			transform: translate(-50%, 0);
+		}	
+	}
+}
