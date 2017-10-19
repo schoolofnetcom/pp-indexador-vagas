@@ -1,0 +1,24 @@
+<header id="header">
+	<nav class="navbar navbar-expand-sm navbar-toggleable">
+		<div class="container">
+			<a href="/jobs" class="navbar-brand">
+				Vagas
+			</a>
+			<button type="button" class="navbar-toggler navbar-toggler-right" data-toggle="collapse" data-target="#navbar">
+				<span class="navbar-toggler-icon ion-navicon-round"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbar">
+				<ul class="navbar-nav ml-auto">
+					<li class="nav-item"><a href="/jobs" class="nav-link">Todas as Vagas</a></li>
+					<li class="nav-item"><a href="/dash" class="nav-link">Analises</a></li>
+					{{#if user}}
+						<li class="nav-item"><a href="/users/{{user._id}}" class="nav-link">{{user.username}}</a></li>
+						<li class="nav-item"><a href="/users/logout" class="nav-link">Logout</a></li>
+					{{else}}
+						<li class="nav-item"><a href="/login" class="nav-link">Login</a></li>
+					{{/if}}
+				</ul>
+			</div>
+		</div>
+	</nav>	
+</header>

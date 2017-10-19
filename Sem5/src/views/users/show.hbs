@@ -1,0 +1,21 @@
+<div class="user-form col-xs-12 col-sm-12 text-center">
+	<h2 >Editar meu perfil</h2>
+	<p>Seu perfil é algo pessoal e não deve ser repassado a ninguem</p>
+	<form action="/users/{{ user._id}}?_method=PUT" method="POST">
+		<div class="form-group">
+			<input type="text" name="username" placeholder="Username:" disabled value="{{ user.username }}" class="form-control">
+		</div>
+		<div class="form-group">
+			<input type="email" name="email" placeholder="Email:" value="{{ user.email }}" class="form-control">
+		</div>
+		<div class="form-group">
+			<input type="tel" name="telephone" placeholder="Telephone:" value="{{ user.telephone }}" class="form-control">
+		</div>
+		<div class="form-group">
+			<input type="password" name="password" placeholder="Password" value="{{ user.password }}" class="form-control">
+		</div>
+		<div class="form-group">
+			<button type="submit" class="btn btn-primary">Save</button>
+		</div>
+	</form>
+</div>

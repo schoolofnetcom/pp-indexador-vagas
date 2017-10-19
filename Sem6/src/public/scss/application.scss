@@ -1,0 +1,41 @@
+#main {}
+
+.user-form {
+	background: $color-default;
+	padding: 2.2em;
+}
+
+.jobs-top {
+	min-height: 2em;
+	width: 100%;
+	padding: 3em;
+	background: linear-gradient(to bottom right, $bg-primary-default, $bg-primary-secondary);
+	h1 {
+		color: $color-default;
+	}
+}
+
+.jobs-list {
+	width: 100%;
+	margin: 2em 0;
+	.job-box {
+		border-top: 1px solid #dedede;
+		min-height: 1.3em;
+		padding: 2em 0.8em;
+		background: $color-default;
+		h2 {
+			color: #333333;
+		}
+		p {
+			color: #808080;
+		}
+		.job-action {
+			padding: 1.2em;
+		}
+	}
+}
+
+.job-detail {
+	width: 100%;
+	margin: 2em 0;
+}

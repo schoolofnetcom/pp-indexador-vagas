@@ -1,0 +1,29 @@
+<section class="jobs-top">
+    <div class="container">
+        <div class="row justify-content-center">
+            <h1>Todas vagas</h1>
+        </div>
+    </div>
+</section>
+
+<section class="jobs-list">
+    <div class="container">
+		{{#each data}}
+			<div class="row job-box">
+				<div class="col-xs-9 col-md-9">
+					<h2>{{ this.title }}</h2>
+					<p>
+						{{ this.desc }}
+					</p>
+				</div>
+				<div class="job-action col-xs-3 col-md-3 text-center">
+					{{#if ../user}}
+						<a href="/jobs/{{ this._id }}" class="btn btn-success btn-lg">Ver Detalhe</a>
+					{{else}}
+						<a href="/register" class="btn btn-success btn-lg">Crie uma conta</a>
+					{{/if}}
+				</div>
+			</div>
+		{{/each}}
+    </div>
+</section>
