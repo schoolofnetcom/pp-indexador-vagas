@@ -17,19 +17,21 @@ export default async (req, res) => {
 
 	let bodyPages = await request(withOptions())
 	$ = cheerio.load(bodyPages.html())
-	
-	let cacheData = await Job.find({}).sort({ 'date': 'desc' })
-	let lastUpdated = cacheData[0].date
-	let lastUpdateInSite = moment($('.vote-item:first-child .info-data > p').text().trim(), 'DD/MM/YYYY')
-	let needUpdate = moment(lastUpdated).isBefore(lastUpdateInSite)
 
-	if (!needUpdate) {
-		return res.render('jobs/index', {
-			title: 'Indexador de Vagas - Listagem',
-			layout: 'app',
-			user: req.user || undefined,
-			data: cacheData
-		})		
+	let cacheData = await Job.find({}).sort({ 'date': 'desc' })
+	if (cacheData && cacheData.length > 0) { 
+		let lastUpdated = cacheData[0].date
+		let lastUpdateInSite = moment($('.vote-item:first-child .info-data > p').text().trim(), 'DD/MM/YYYY')
+		let needUpdate = moment(lastUpdated).isBefore(lastUpdateInSite)
+	
+		if (!needUpdate) {
+			return res.render('jobs/index', {
+				title: 'Indexador de Vagas - Listagem',
+				layout: 'app',
+				user: req.user || undefined,
+				data: cacheData
+			})		
+		}
 	}
 
 	let pages = []
