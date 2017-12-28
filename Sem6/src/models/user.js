@@ -19,6 +19,6 @@ const User = new mongoose.Schema({
 	}
 })
 
-User.plugin(passportLocalMongoose)
+User.plugin(passportLocalMongoose, { usernameField: 'email' })
 
 export default mongoose.model('User', User)
